@@ -1,0 +1,33 @@
+{
+  "name": "quick-vue-template",
+  "version": "2.0.4",
+  "description": "快速生成vue项目各种模板",
+  "main": "gen.js",
+  "bin": {
+    "gen": "./gen.js"
+  },
+  "scripts": {
+    "gen": "node ./gen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jingping-ye/quick-vue-template.git"
+  },
+  "keywords": [
+    "vue",
+    "vue-template",
+    "quick-vue-template",
+    "quick"
+  ],
+  "author": "jingping.ye",
+  "email": "1104639669@qq.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jingping-ye/quick-vue-template/issues"
+  },
+  "homepage": "https://github.com/jingping-ye/quick-vue-template#readme",
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "inquirer": "^7.1.0"
+  }
+}
