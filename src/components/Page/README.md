@@ -1,6 +1,6 @@
 # Page 功能说明
 
-> 页面顶部导航栏封装
+> 页面（顶部导航栏 + 内容容器）
 
 ## 图例
 
@@ -8,14 +8,14 @@
 
 ## 属性
 
-| 参数            | 说明             | 类型    | 可选值 | 默认值   |
-| --------------- | ---------------- | ------- | ------ | -------- |
-| title           | 开启代码对比模式 | String  | -      | 默认标题 |
-| leftText        | 左侧文字         | String  | -      | -        |
-| rightText       | 右侧文字         | String  | -      | -        |
-| showNav         | 是否显示顶部导航 | Boolean | -      | true     |
-| isNeedRightIcon | 是否需要右侧图标 | Boolean | -      | false    |
-| isNeedLeftIcon  | 是否需要左侧图标 | Boolean | -      | false    |
+| 参数        | 说明                               | 类型    | 可选值 | 默认值   |
+| ----------- | ---------------------------------- | ------- | ------ | -------- |
+| title       | 开启代码对比模式                   | String  | -      | 默认标题 |
+| leftText    | 左侧文字，需要和isNeedLeft配合使用 | String  | -      | -        |
+| rightText   | 右侧文字，需要和isNeedLeft配合使用 | String  | -      | -        |
+| showNav     | 是否显示顶部导航                   | Boolean | -      | true     |
+| isNeedRight | 是否需要右侧                       | Boolean | -      | false    |
+| isNeedLeft  | 是否需要左侧                       | Boolean | -      | false    |
 
 ## 事件
 
@@ -28,150 +28,72 @@
 
 ## 示例
 
-### 作为编辑器使用
+### 普通使用
 
 ```js
 <template>
-  <div id="app">
-    <MonacoEditor
-      height="300"
-      :value="initValue"
-      theme="vs"
-      language="json"
-      :options="options"
-      @blur="onBlur"
-    ></MonacoEditor>
+  <div class="index">
+    <Page title="index首页">
+     index首页组件
+    </Page>
   </div>
 </template>
-
 <script>
-import MonacoEditor from "@/views/components/MonacoEditor";
+import Page from "@/components/Page/Page";
 export default {
-  name: "App",
+  name: "index",
+  mixins: [],
   components: {
-    MonacoEditor
+    Page,
   },
-  computed: {
-    initValue() {
-      return JSON.stringify(this.value, null, 4);
-    }
+  props: {},
+  data() {
+    return {};
   },
+};
+</script>
+<style scoped>
+.index {
+}
+</style>
+
+```
+
+### 自定义回退事件
+
+```js
+<template>
+  <div class="about">
+    <Page title="about页面" :routerNav="goBack">
+      about页面
+    </Page>
+  </div>
+</template>
+<script>
+import Page from "@/components/Page/Page";
+export default {
+  name: "index",
+  mixins: [],
+  components: {
+    Page,
+  },
+  props: {},
   data() {
     return {
-      options: {},
-      value: {
-        title: "新的值",
-        type: {
-          type: "12",
-          application: "使用",
-          dayData: "123456",
-          yearData: "654321",
-          description: "描述a"
-        },
-        application: "使用",
-        dayData: "123456",
-        yearData: "654321",
-        description: "描述a"
-      },
-      origin: {
-        title: "原始值",
-        type: {
-          type: "12",
-          application: "使用",
-          dayData: "123456",
-          yearData: "654321",
-          description: "描述a"
-        },
-        application: "使用",
-        dayData: "123456",
-        yearData: "654321",
-        description: "描述a"
-      }
     };
   },
   methods: {
-    onBlur(value) {
-      this.value = JSON.parse(value);
-      console.log("onBlur", this.value);
-    }
-  }
-};
-</script>
-```
-
-### 对比代码
-
-> 只用于显示
-
-```js
-<template>
-  <div id="app">
-    <a-row>
-      <a-col :span="12">初始代码</a-col>
-      <a-col :span="12">新代码</a-col>
-    </a-row>
-    <MonacoEditor
-      height="300"
-      :diffEditor="true"
-      :original="myOrigin"
-      :value="myValue"
-      language="json"
-      :options="options"
-    ></MonacoEditor>
-  </div>
-</template>
-
-<script>
-import MonacoEditor from "@/views/components/MonacoEditor";
-export default {
-  name: "App",
-  components: {
-    MonacoEditor
-  },
-  computed: {
-    myValue() {
-      return JSON.stringify(this.value, null, 4);
+    //	跳转到首页
+    goBack() {
+      this.$router.go({
+        name: "Index",
+      });
     },
-    myOrigin() {
-      return JSON.stringify(this.origin, null, 4);
-    }
   },
-  data() {
-    return {
-      options: {
-        readOnly: true
-      },
-      value: {
-        title: "新的值",
-        type: {
-          type: "12",
-          application: "使用",
-          dayData: "123456",
-          yearData: "654321",
-          description: "描述a"
-        },
-        application: "使用",
-        dayData: "123456",
-        yearData: "654321",
-        description: "描述a"
-      },
-      origin: {
-        title: "原始值",
-        type: {
-          type: "12",
-          application: "使用",
-          dayData: "123456",
-          yearData: "654321",
-          description: "描述a"
-        },
-        application: "使用",
-        dayData: "123456",
-        yearData: "654321",
-        description: "描述a"
-      }
-    };
-  }
 };
 </script>
-
+<style scoped>
+.about {
+}
+</style>
 ```

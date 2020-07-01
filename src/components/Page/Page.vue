@@ -17,8 +17,6 @@
 </template>
 <script>
 //  常量声明
-const value = { msg: "Hello World!" };
-
 //  引入外部资源
 import { NavBar, Icon } from "vant";
 export default {
@@ -62,14 +60,7 @@ export default {
   },
 
   data() {
-    return {
-      //  常量
-      value,
-      //  状态
-      flag: true,
-      //  变量
-      list: [],
-    };
+    return {};
   },
   computed: {},
   watch: {},

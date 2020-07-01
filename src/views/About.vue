@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <Page title="about页面" @onClickLeft="goBack">
+    <Page title="about页面" @onClickLeft="onClickLeft" :routerNav="goBack">
       index组件
       <button @click="clickMe">click me!</button>
     </Page>
@@ -35,11 +35,16 @@ export default {
   methods: {
     clickMe() {
       this.$router.push({
-        name: "Index",
+        name: "TestCom",
       });
     },
+    onClickLeft() {
+      console.log("点击了右侧！");
+    },
     goBack() {
-      // this.$router.go(-1);
+      this.$router.go({
+        name: "Index",
+      });
     },
     test() {
       console.log("Hello World!");
