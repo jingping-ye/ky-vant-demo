@@ -1,9 +1,6 @@
 <template>
   <div class="index">
-    <Page title="index首页">
-      index组件
-      <button @click="clickMe">click me!</button>
-    </Page>
+    <StatusTip status="success" />
   </div>
 </template>
 <script>
@@ -12,11 +9,15 @@
 //  引入外部资源
 // import someThing from 'SomeThing';
 import Page from "@/components/Page/Page";
+import RangeSelector from "@/components/RangeSelector/RangeSelector";
+import StatusTip from "@/components/StatusTip/StatusTip";
 export default {
   name: "index",
   mixins: [],
   components: {
     Page,
+    RangeSelector,
+    StatusTip,
   },
   props: {},
   data() {
@@ -32,6 +33,9 @@ export default {
     },
     goBack() {
       this.$router.go(-1);
+    },
+    changeSelector(value) {
+      console.log("value", value);
     },
   },
   filters: {},

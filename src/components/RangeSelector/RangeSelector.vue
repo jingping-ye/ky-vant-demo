@@ -6,11 +6,6 @@
   </div>
 </template>
 <script>
-//  常量声明
-// const value = { msg: "Hello World!" };
-
-//  引入外部资源
-// import someThing from 'SomeThing';
 export default {
   name: "rangeStepper",
   mixins: [],
@@ -20,44 +15,27 @@ export default {
       type: Array,
       default: () => [],
     },
-    rangeIndex: {
-      type: Number,
-      default: 0,
-    },
-    rangeValue: {
+    value: {
       type: String,
       default: "",
     },
   },
   data() {
     return {
-      //  常量
-      //  状态
-      flag: true,
       //  变量
       stepperValue: "",
-      list: [],
     };
   },
   computed: {},
   watch: {
-    rangeIndex: {
+    value: {
       handler(newV) {
-        this.stepperValue = this.range[newV];
-      },
-      immediate: true,
-    },
-    rangeValue: {
-      handler(newV) {
-        this.stepperValuev = newV;
+        this.stepperValue = newV;
       },
       immediate: true,
     },
   },
   methods: {
-    test() {
-      console.log("Hello World!");
-    },
     handleMinus() {
       this.handleChangeStep("minus");
     },
@@ -80,6 +58,7 @@ export default {
             this.stepperValue = this.range[curValueIndex + 1];
           }
         }
+        this.$emit("onChange", this.stepperValue);
       } else {
         return false;
       }

@@ -1,13 +1,11 @@
 <template>
-  <Page :title="pageTitle" :showNav="true" @onClickLeft="goBack" :isNeedLeftIcon="false">
+  <Page :title="pageTitle" :showNav="true" :isNeedLeft="false">
     <div class="pay-status">
       <div class="pay-box">
         <div class="successimg">
-          <van-icon name="checked" color="#E30012" size="40" v-if="execResult == 'success'" />
-          <van-icon name="clear" color="#E84335" size="40" v-if="execResult == 'fail'" />
-          <div>
-            {{ successTip }}
-          </div>
+          <van-icon name="checked" :color="successColor" size="40" v-if="execResult == 'success'" />
+          <van-icon name="clear" :color="failColor" size="40" v-if="execResult == 'fail'" />
+          <div>{{ execResult === "success" ? successTip : failTip }}</div>
         </div>
 
         <div class="redirect">
@@ -24,7 +22,7 @@
 //  常量声明
 
 //  引入外部资源
-import Page from "@/components/Page";
+import Page from "@/components/Page/Page";
 import { Button, Icon } from "vant";
 export default {
   name: "StatusTip",
@@ -35,25 +33,33 @@ export default {
     [Button.name]: Button,
   },
   props: {
-    backRouter: {
-      type: String,
-      default: "/",
-    },
     status: {
       type: String,
       default: "success",
+      validator: function(value) {
+        const validStatus = ["success", "fail"];
+        return validStatus.includes(value);
+      },
     },
     optTip: {
       type: String,
-      default: "返回上一步骤",
+      default: "确认",
     },
     successTip: {
       type: String,
-      default: "",
+      default: "执行成功",
+    },
+    successColor: {
+      type: String,
+      default: "#E30012",
+    },
+    failColor: {
+      type: String,
+      default: "#666",
     },
     failTip: {
       type: String,
-      default: "",
+      default: "执行失败",
     },
     pageTitle: {
       type: String,
@@ -68,11 +74,6 @@ export default {
   computed: {},
   watch: {},
   methods: {
-    goBack() {
-      this.$router.replace({
-        name: this.backRouter,
-      });
-    },
     clickOpt() {
       this.$emit("onClickOpt");
     },

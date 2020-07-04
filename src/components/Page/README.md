@@ -8,14 +8,14 @@
 
 ## 属性
 
-| 参数        | 说明                               | 类型    | 可选值 | 默认值   |
-| ----------- | ---------------------------------- | ------- | ------ | -------- |
-| title       | 开启代码对比模式                   | String  | -      | 默认标题 |
-| leftText    | 左侧文字，需要和isNeedLeft配合使用 | String  | -      | -        |
-| rightText   | 右侧文字，需要和isNeedLeft配合使用 | String  | -      | -        |
-| showNav     | 是否显示顶部导航                   | Boolean | -      | true     |
-| isNeedRight | 是否需要右侧                       | Boolean | -      | false    |
-| isNeedLeft  | 是否需要左侧                       | Boolean | -      | false    |
+| 参数        | 说明                                 | 类型    | 可选值 | 默认值   |
+| ----------- | ------------------------------------ | ------- | ------ | -------- |
+| title       | 开启代码对比模式                     | String  | -      | 默认标题 |
+| leftText    | 左侧文字，需要和 isNeedLeft 配合使用 | String  | -      | -        |
+| rightText   | 右侧文字，需要和 isNeedLeft 配合使用 | String  | -      | -        |
+| showNav     | 是否显示顶部导航                     | Boolean | -      | true     |
+| isNeedRight | 是否需要右侧                         | Boolean | -      | false    |
+| isNeedLeft  | 是否需要左侧                         | Boolean | -      | true     |
 
 ## 事件
 
@@ -23,8 +23,6 @@
 | ------------ | -------- | -------- |
 | onClickLeft  | 点击左侧 | ()       |
 | onClickRight | 点击右侧 | ()       |
-
-
 
 ## 示例
 
