@@ -7,8 +7,18 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: "/",
+    name: "/guide",
+    component: () => import("@/views/guide/guide.vue"),
+  },
+  {
+    path: "/index",
     name: "Index",
     component: () => import("@/views/index/index.vue"),
+  },
+  {
+    path: "/phone",
+    name: "Phone",
+    component: () => import("@/views/phone/phone.vue"),
   },
   {
     path: "/about",
@@ -18,8 +28,6 @@ const routes = [
 ];
 
 const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
   routes,
 });
 

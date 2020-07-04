@@ -9,4 +9,33 @@
   font-family: PingFangSC-Regular;
   font-size: 14px;
 }
+iframe {
+  background: #f7f8fa;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+/*- scrollbar -*/
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #999;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: #666;
+}
+::-webkit-scrollbar-thumb:vertical:active {
+  background-color: #333;
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
 </style>

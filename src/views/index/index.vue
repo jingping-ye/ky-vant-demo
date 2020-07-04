@@ -1,6 +1,6 @@
 <template>
   <div class="index">
-    <StatusTip status="success" />
+    <StatusTip status="success" @onClickOpt="onClickOpt" />
   </div>
 </template>
 <script>
@@ -36,6 +36,11 @@ export default {
     },
     changeSelector(value) {
       console.log("value", value);
+    },
+    onClickOpt() {
+      this.$router.push({
+        name: "Phone",
+      });
     },
   },
   filters: {},
