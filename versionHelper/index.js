@@ -15,12 +15,12 @@ const successLog = (message) => console.log(chalk.blue(`${message}`)); // 成功
 const errorLog = (error) => console.log(chalk.red(`${error}`)); // 失败打印
 
 const versionType = {
-  major: "主版本",
-  minor: "次版本",
-  patch: "补丁",
-  premajor: "预备主版本",
-  prepatch: "预测次版本",
-  prerelease: "预发布版本",
+  major: "主版本（不兼容的API修改）",
+  minor: "次版本（向下兼容，功能性增加）",
+  patch: "补丁（向下兼容，bug fixed）",
+  premajor: "alpha(内测版)",
+  prepatch: "beta(公测版)",
+  prerelease: "rc(正式版本的候选版本)",
 };
 
 let versionQuery = {
@@ -39,7 +39,7 @@ versionQuery.choices = Object.keys(versionType).map((version) => {
 });
 
 inquirer.prompt(versionQuery).then((answer) => {
-  let execCmd = `npm version ${answer.selectedVersion}`;
+  let execCmd = `npm run release -- --release-as ${answer.selectedVersion}`;
   cp.exec(execCmd, (err, output) => {
     if (err) {
       errorLog(err);
