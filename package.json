@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build && node compressHelper/index.js",
-    "cz": "npm run log && git add . && git cz",
+    "cz": "npm run log && git add . && git cz && git push",
     "dev": "npm run serve",
     "gen": "node quickVueTemplate gen",
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
