@@ -1,6 +1,6 @@
 {
   "name": "ky-vant-demo",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -11,7 +11,8 @@
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
     "preview": "vue-cli-service build --mode=preview && serve -S dist",
     "compress": "node compressHelper/index.js dist",
-    "version": "git add . && git cz  && node versionHelper/index.js"
+    "version": "node versionHelper/index.js",
+    "release": "standard-version"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
@@ -47,6 +48,7 @@
     "sass": "^1.26.9",
     "sass-loader": "^8.0.2",
     "serve": "^11.3.2",
+    "standard-version": "^8.0.2",
     "vue-cli-plugin-commitlint": "~1.0.12",
     "vue-template-compiler": "^2.6.11"
   },
