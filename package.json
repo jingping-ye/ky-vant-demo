@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build && node compressHelper/index.js",
+    "build": "vue-cli-service build &&  npm run compress",
     "cz": "git add . && git cz && git push && npm run log ",
     "dev": "npm run serve",
     "gen": "node quickVueTemplate gen",
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
-    "preview": "vue-cli-service build --mode=preview && serve -S dist"
+    "preview": "vue-cli-service build --mode=preview && serve -S dist",
+    "compress": "node compressHelper/index.js dist",
+    "version:update": "node versionHelper/index.js"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",

@@ -10,6 +10,13 @@
  - | Page组件;RangeSelector组件、StatusTip组件 | [b074ee8](https://github.com/jingping-ye/ky-vant-demo/commit/b074ee8)
 
 
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ - | git代码提交命令 | [de54894](https://github.com/jingping-ye/ky-vant-demo/commit/de54894)
+ - | git提交命令变动 | [dc75d16](https://github.com/jingping-ye/ky-vant-demo/commit/dc75d16)
+
+
 ### chore
 范围|描述|commitId
 --|--|--
