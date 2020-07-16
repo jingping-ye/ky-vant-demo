@@ -3,6 +3,7 @@
 ### 🌟 新功能
 范围|描述|commitId
 --|--|--
+ - | 版本号自动变更 | [71802da](https://github.com/jingping-ye/ky-vant-demo/commit/71802da)
  - | 添加mock的CURD操作;封装mock方法 | [8bf7430](https://github.com/jingping-ye/ky-vant-demo/commit/8bf7430)
  - | 添加vant | [03cd43d](https://github.com/jingping-ye/ky-vant-demo/commit/03cd43d)
  - | 页面组件 | [600ccb3](https://github.com/jingping-ye/ky-vant-demo/commit/600ccb3)

@@ -11,7 +11,7 @@
     "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0",
     "preview": "vue-cli-service build --mode=preview && serve -S dist",
     "compress": "node compressHelper/index.js dist",
-    "version:update": "node versionHelper/index.js"
+    "version": "node versionHelper/index.js"
   },
   "dependencies": {
     "amfe-flexible": "^2.2.1",
