@@ -1,13 +1,15 @@
-# Changelog
+# [3.0.0](https://github.com/jingping-ye/ky-vant-demo/compare/v3.0.0-0...v3.0.0) (2020-07-16)
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+### 🐛 Bug 修复
+范围|描述|commitId
+--|--|--
+ - | 版本号变更 | [82d15fb](https://github.com/jingping-ye/ky-vant-demo/commit/82d15fb)
 
-## [3.0.0](https://github.com/jingping-ye/ky-vant-demo/compare/v3.0.0-0...v3.0.0) (2020-07-16)
 
-
-### Bug Fixes
-
-* 版本号变更 ([82d15fb](https://github.com/jingping-ye/ky-vant-demo/commit/82d15fbac97744ae45a9974d778de161c5e0ba24))
+### chore
+范围|描述|commitId
+--|--|--
+ release | 3.0.0 | [2f4956e](https://github.com/jingping-ye/ky-vant-demo/commit/2f4956e)
 
 # [3.0.0-0](https://github.com/jingping-ye/ky-vant-demo/compare/v2.0.2...v3.0.0-0) (2020-07-16)
 
@@ -44,3 +46,4 @@ All notable changes to this project will be documented in this file. See [standa
  - | 版本号变动 | [029e6b1](https://github.com/jingping-ye/ky-vant-demo/commit/029e6b1)
  - | 版本号变动 | [7404a81](https://github.com/jingping-ye/ky-vant-demo/commit/7404a81)
  - | 环境配置(开发、预览、生产);开发模板:(组件、mockapi、路由、vuex、真实api) | [4683641](https://github.com/jingping-ye/ky-vant-demo/commit/4683641)
+

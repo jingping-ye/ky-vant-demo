@@ -31,4 +31,11 @@ const router = new VueRouter({
   routes,
 });
 
+router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = "ky-vant-demo | " + to.meta.title;
+  }
+  next();
+});
+
 export default router;
