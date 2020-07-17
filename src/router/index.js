@@ -31,6 +31,13 @@ const router = new VueRouter({
   routes,
 });
 
+//  设置全局title
+Vue.directive("title", {
+  inserted: function(el, binding) {
+    document.title = `${el.dataset.title} | ${document.title}`;
+  },
+});
+
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
     document.title = "ky-vant-demo | " + to.meta.title;
